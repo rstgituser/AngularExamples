@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="phenomap">
+<head>
+    <meta a/>
+    <title>SportsStore</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <script>
+        angular.module("phenomap", ["customFilters"]);
+    </script>
+    <script src="controllers/phenomap.js"></script>
+    <script src="filters/customFilters.js"></script>
+</head>
+<body ng-controller="phenomapCtrl">
+<div class="navbar navbar-inverse">
+    <a class="navbar-brand" href="#">SPORTS STORE</a>
+</div>
+<div class="panel panel-default row">
+    <div class="col-xs-3">
+        <div class="well" ng-repeat="item in data.mouselines['mouselines']">
+            <h3>
+                {{item.lineName}}
+            </h3>
+
+        </div>
+        <!--<div class="list-group" ng-repeat="item in data.mouselines['mouselines']">
+
+            <a href="#" class="list-group-item">{{item.lineName}}</a>
+
+        </div>
+-->
+
+    </div>
+    <div class="col-xs-8">
+        <div class="well" ng-repeat="item in data.templates['annotationTemplates']">
+            <h3>
+                {{item.atName}}
+            </h3>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
